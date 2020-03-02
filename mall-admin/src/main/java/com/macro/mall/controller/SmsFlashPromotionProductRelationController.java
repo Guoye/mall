@@ -47,7 +47,7 @@ public class SmsFlashPromotionProductRelationController {
     }
 
     @ApiOperation("删除关联")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
         int count = relationService.delete(id);

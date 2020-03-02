@@ -146,7 +146,7 @@ public class UmsAdminController {
     }
 
     @ApiOperation("删除指定用户信息")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
         int count = adminService.delete(id);

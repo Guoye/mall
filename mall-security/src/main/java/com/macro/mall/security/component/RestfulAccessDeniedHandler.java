@@ -2,6 +2,7 @@ package com.macro.mall.security.component;
 
 import cn.hutool.json.JSONUtil;
 import com.macro.mall.common.api.CommonResult;
+import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -22,6 +23,7 @@ public class RestfulAccessDeniedHandler implements AccessDeniedHandler{
                        AccessDeniedException e) throws IOException, ServletException {
         response.setCharacterEncoding("UTF-8");
         response.setContentType("application/json");
+        response.setStatus(HttpStatus.UNAUTHORIZED.value());
         response.getWriter().println(JSONUtil.parse(CommonResult.forbidden(e.getMessage())));
         response.getWriter().flush();
     }

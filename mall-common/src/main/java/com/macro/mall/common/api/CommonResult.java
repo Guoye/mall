@@ -1,5 +1,8 @@
 package com.macro.mall.common.api;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
 /**
  * 通用返回对象
  * Created by macro on 2019/4/19.
@@ -79,7 +82,7 @@ public class CommonResult<T> {
      * 未登录返回结果
      */
     public static <T> CommonResult<T> unauthorized(T data) {
-        return new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
+        return  new CommonResult<T>(ResultCode.UNAUTHORIZED.getCode(), ResultCode.UNAUTHORIZED.getMessage(), data);
     }
 
     /**

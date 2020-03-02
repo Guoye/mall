@@ -35,7 +35,7 @@ public class SmsCouponController {
     }
 
     @ApiOperation("删除优惠券")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public CommonResult delete(@PathVariable Long id) {
         int count = couponService.delete(id);

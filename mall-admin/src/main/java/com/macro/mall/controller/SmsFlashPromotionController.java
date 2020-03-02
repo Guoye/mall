@@ -46,7 +46,7 @@ public class SmsFlashPromotionController {
     }
 
     @ApiOperation("删除活动信息")
-    @RequestMapping(value = "/delete/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Object delete(@PathVariable Long id) {
         int count = flashPromotionService.delete(id);
